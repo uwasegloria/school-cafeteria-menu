@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Cafeteria Daily Menu</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7f4;
+            color: #333;
+        }
+
+        header {
+            background: #176b45;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 16px;
+        }
+
+        .date {
+            text-align: center;
+            margin: 20px;
+            font-weight: bold;
+            color: #176b45;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .menu-title {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #176b45;
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-card .emoji {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .menu-card h3 {
+            color: #176b45;
+            margin-bottom: 12px;
+        }
+
+        .menu-card p {
+            line-height: 1.7;
+        }
+
+        .price {
+            color: #176b45;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        .notice {
+            background: #e2f3e8;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        footer {
+            background: #176b45;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media(max-width: 600px) {
+            header h1 {
+                font-size: 23px;
+            }
+
+            .container {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🍽️ SCHOOL CAFETERIA</h1>
+        <p>Fresh Meals, Happy Students!</p>
+    </header>
+
+    <div class="date" id="today"></div>
+
+    <main class="container">
+
+        <h2 class="menu-title">Today's Menu</h2>
+
+        <section class="menu">
+
+            <div class="menu-card">
+                <div class="emoji">🥞</div>
+                <h3>Breakfast</h3>
+                <p>
+                    Pancakes<br>
+                    Boiled Eggs<br>
+                    Fresh Milk
+                </p>
+                <div class="price">Price: 1,500 RWF</div>
+            </div>
+
+            <div class="menu-card">
+                <div class="emoji">🍛</div>
+                <h3>Lunch</h3>
+                <p>
+                    Rice<br>
+                    Beans<br>
+                    Vegetables<br>
+                    Chicken
+                </p>
+                <div class="price">Price: 2,500 RWF</div>
+            </div>
+
+            <div class="menu-card">
+                <div class="emoji">🍎</div>
+                <h3>Snacks</h3>
+                <p>
+                    Fresh Fruits<br>
+                    Sandwiches<br>
+                    Biscuits
+                </p>
+                <div class="price">Price: 1,000 RWF</div>
+            </div>
+
+            <div class="menu-card">
+                <div class="emoji">🥤</div>
+                <h3>Drinks</h3>
+                <p>
+                    Orange Juice<br>
+                    Bottled Water<br>
+                    Fresh Milk
+                </p>
+                <div class="price">Price: 500 RWF</div>
+            </div>
+
+        </section>
+
+        <div class="notice">
+            <h3>📢 Important Notice</h3>
+            <p>
+                Eat healthy, stay healthy!
+                Our cafeteria serves fresh meals every school day.
+            </p>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> School Cafeteria. All Rights Reserved.</p>
+        <p>Healthy Food, Healthy Students!</p>
+    </footer>
+
+    <script>
+        // Display today's date
+        const today = new Date();
+
+        document.getElementById("today").textContent =
+            "Today's Date: " + today.toLocaleDateString("en-GB", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric"
+            });
+
+        // Display current year
+        document.getElementById("year").textContent =
+            today.getFullYear();
+    </script>
+
+</body>
+</html>
